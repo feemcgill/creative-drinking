@@ -1,0 +1,294 @@
+@mixin breakpoint($point) {
+  @if $point == large {
+    @media (min-width: 1401px) { @content; }
+  }
+
+  @if $point == default {
+    @media (min-width: 1164px) and (max-width: 1400px)  { @content; }
+  }
+  @else if $point == med {
+    @media (min-width: 960px) and (max-width: 1163px) { @content; }
+  }
+
+  @else if $point == odd {
+    @media (min-width: 600px) and (max-width: 959px) { @content; }
+  }
+
+  @else if $point == small {
+    @media (max-width: 599px)  { @content; }
+  }
+  
+  @if $point == break {
+    @media (max-width: 959px) { @content; }
+  }
+
+}
+
+
+@mixin ir {
+	text-indent: 105%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+@mixin zeroed {
+	margin:0;
+	padding:0;
+}
+
+
+@mixin regulate {
+    position:relative;
+    top: auto;
+    left: auto;
+    right:auto;
+    width:auto;
+    float:none;
+    height:auto;
+    max-width: none;
+    max-height: none;    
+}
+
+
+@mixin cf {
+	&:before,
+	&:after {
+	    content: " "; /* 1 */
+	    display: table; /* 2 */
+	}
+	&:after {
+
+	    clear: both;
+	}
+	*zoom: 1;
+}
+
+.cf {
+	@include cf;
+}
+
+
+
+@mixin horizontal-menu {
+	ul {
+		margin:0;
+		padding:0;
+		width:100%;
+		list-style:none;
+		li {
+			display:inline-block;
+			vertical-align: top;
+		}
+	}
+
+}
+
+@mixin reg-list {
+	ul {
+		padding: 0 0 0 20px;
+		margin:0;
+	}
+}
+@mixin plain-list {
+	ul {
+		margin:0;
+		padding:0;
+		list-style:none;
+		li {
+		margin:0;
+		padding:0;
+		}
+	}
+
+}
+
+@mixin close-button {
+	width: 36px;
+	height: 36px;
+	cursor: pointer;
+	z-index: 8040;
+	@include bluebg;
+	@include box-shadow(rgba(0,0,0,.5) 0px 0px 1px);
+	border-radius:100px;
+	&:after {
+		content:'';
+		background:red;
+		// background-image: url(../img/close-x.svg), none;
+		height: 20px;
+		width: 20px;
+		position: absolute;
+		top: 9px;
+		left: 9px;
+	}
+}
+
+@mixin shadow {
+	@include box-shadow(#999 1px 1px 1px);
+}
+
+
+@mixin darkshadow {
+	@include box-shadow(#222 1px 1px 3px);
+}
+
+
+
+@mixin fixchop {
+   // z-index: 1;
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden; 
+    -webkit-perspective: 1000;
+
+    -moz-transform: translateZ(0);
+    -moz-backface-visibility: hidden; 
+    -moz-perspective: 1000;
+
+    -ms-transform: translateZ(0);
+    -ms-backface-visibility: hidden; 
+    -ms-perspective: 1000;
+
+    -o-transform: translateZ(0);
+    -o-backface-visibility: hidden; 
+    -o-perspective: 1000;
+
+    transform: translateZ(0);
+    backface-visibility: hidden; 
+    perspective: 1000; 
+}
+
+
+
+
+/* FLEXBOX */
+@mixin flexbox {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* FLEXBOX COLUMN */
+@mixin flexbox-dir-column {
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+  -webkit-flex-direction: column !important;
+  -moz-box-orient: vertical !important;
+  -moz-box-direction: normal !important;
+  -ms-flex-direction: column !important;
+  flex-direction: column !important;
+}
+
+/* FLEXBOX ROW */
+@mixin flexbox-dir-row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: horizontal;
+  -webkit-flex-direction: row;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: horizontal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+/* FLEXBOX WRAP */
+@mixin flex-flow-wrap {
+  -webkit-flex-flow: wrap;
+  flex-flow: wrap;
+}
+
+/*  */
+@mixin flex-1 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+@mixin flex-justify-top {
+  -webkit-box-pack: top;
+  -webkit-justify-content: top;
+  -moz-box-pack: top;
+  -ms-flex-pack: top;
+  justify-content: top;
+}
+
+@mixin flex-justify-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+@mixin flex-grow-1 {
+  -webkit-flex-grow: 1;
+  -ms-flex-grow: 1;
+  flex-grow: 1;
+}
+
+@mixin flex-order($num) {
+  -webkit-box-ordinal-group: $num;
+  -moz-box-ordinal-group: $num;
+  -ms-flex-order: $num;
+  -webkit-order: $num;
+  order: $num;
+}
+
+/* IF YOU WANT A FLEX ITEM TO STICK TO TOP, CENTER OR BOTTOM */
+@mixin flex-item-align-self($position) {
+  -webkit-align-self:$position;
+  align-self:$position;
+}
+
+/* MULTIPLE COLUMN TEXT / CONTENT */
+@mixin column-count($num, $gap) {
+  -webkit-column-count: $num;
+  -moz-column-count: $num;
+  column-count: $num;
+
+  -webkit-column-gap: $gap;
+  -moz-column-gap: $gap;
+  column-gap: $gap;
+}
+
+@mixin break-inside-avoid {
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+
+
+
+@font-face {
+    font-family: 'din';
+    src: url('../fonts/din/din_alternate_bold-webfont.eot');
+    src: url('../fonts/din/din_alternate_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/din/din_alternate_bold-webfont.woff2') format('woff2'),
+         url('../fonts/din/din_alternate_bold-webfont.woff') format('woff'),
+         url('../fonts/din/din_alternate_bold-webfont.ttf') format('truetype'),
+         url('../fonts/din/din_alternate_bold-webfont.svg#din_alternatebold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@mixin din {
+   font-family: "din";
+   font-weight: 100;
+   text-transform: uppercase;
+   letter-spacing: .2em;
+
+}
+
+
+
+@mixin cas {
+   font-family: "NewCaslon";
+   font-weight: normal;
+}
+
+
+
+

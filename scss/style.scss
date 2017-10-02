@@ -1,0 +1,149 @@
+@import "compass/css3";
+@import "mixins";
+@import "vars";
+@import "vendor";
+@import "cd";
+@import "wpcf7";
+
+
+body, html {
+	margin:0;
+	padding:0;
+	@include cas;
+}
+
+a {
+		cursor: pointer;
+		color:white;
+		text-decoration: none;
+		-webkit-backface-visibility: hidden;
+		-moz-backface-visibility:    hidden;
+		-ms-backface-visibility:     hidden;
+		-o-backface-visibility:     hidden;
+		backface-visibility:     hidden; 
+	&:hover {
+
+  		-webkit-backface-visibility: hidden;
+
+	}
+}
+
+h1,h2,h3,h4,h5 {
+	margin:0;
+	font-weight: 400;
+
+}
+
+
+ul {
+	margin: 0;
+	padding: 0;
+	li {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+}
+
+.xx {
+	width:1164px;
+	margin:0 auto;
+	@include breakpoint(med) {
+		width:960px;
+	}
+	@include breakpoint(odd) {
+		width:600px;
+	}
+	@include breakpoint(small) {
+		width:100%;
+		padding:0 10px;
+		@include box-sizing(border-box); 
+		min-width:300px;
+	}		
+}
+
+
+.error-404 {
+  text-align: center;
+  height: 80vh;
+  h1 {
+    font-size: 180px;
+    color:#666;
+    line-height: 1.2em;
+    padding: 150px 0 20px;
+  }
+  p {
+    max-width: 600px;
+    margin: 0 auto;
+    color:#666;
+    font-size: 20px;
+    line-height: 1.05;
+    border-top:3px solid #666;
+    padding:50px;
+    margin-bottom: 100px;
+  }
+}
+
+input[type=text],
+input[type=url],
+input[type=tel],
+input[type=number],
+input[type=color],
+input[type=email], {
+	width: 100%;
+	background: rgba(255,255,255,.1);
+	background: transparent;
+	border:none;
+	border-bottom:5px solid $transgrey;
+	@include din;
+	font-weight: 300;
+	font-size: 28px;
+	padding:10px;
+	@include box-sizing(border-box);
+	margin-bottom: 14px;
+	@include breakpoint(small) {
+		font-size:14px;
+	}
+}
+
+input[type=submit] {
+	padding:10px 20px;
+	font-size: 18px;
+	letter-spacing: .2em;
+	text-transform: uppercase;
+	color:$transgrey;
+	@include din;
+	font-weight: 700;
+	border-radius:3px;
+	margin: 0 auto;
+	display: inline-block;
+	border:none;
+	background:white;
+	box-shadow: none;
+	margin-top: 20px;
+	cursor:pointer;
+	@include transition(all .3s);
+	@include breakpoint(small) {
+		width: 80%;
+		text-align: center;
+		display: block;
+		margin:20px auto 0;
+	}
+}
+
+
+::-webkit-input-placeholder {
+   color:  rgba(255,255,255,1);
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color:  rgba(255,255,255,1);  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color:  rgba(255,255,255,1);  
+}
+
+:-ms-input-placeholder {  
+   color:  rgba(255,255,255,1);  
+}

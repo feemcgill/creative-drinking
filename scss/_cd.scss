@@ -1,0 +1,445 @@
+body {
+	background: rgba(137,246,246,1);
+	background: white;
+}
+
+#page-wrapX {
+	position: absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	overflow: hidden;
+}
+
+#page-wrap {
+	position: relative;
+	z-index: 10;
+}
+.scrawl {
+	position: fixed;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	text-align: center;
+	z-index: -1;
+	svg {
+		//height: 100%;
+		//width: 100%;
+		g:nth-of-type(odd) path {
+			fill: rgba(246,164,137,1);
+			fill: white;
+		}
+
+		g:nth-of-type(even) path {
+			fill: rgba(246,137,137,1);
+			fill: white;
+
+		}
+	}
+	//@include fixchop;
+}
+
+
+section {
+	//min-height: 100vh;
+	position: relative;
+	z-index: 100;
+	overflow: auto;
+}
+@mixin sickTrans {
+-webkit-transition: all 600ms cubic-bezier(0.250, 0.460, 0.000, 0.925); 
+   -moz-transition: all 600ms cubic-bezier(0.250, 0.460, 0.000, 0.925); 
+     -o-transition: all 600ms cubic-bezier(0.250, 0.460, 0.000, 0.925); 
+        transition: all 600ms cubic-bezier(0.250, 0.460, 0.000, 0.925); /* custom */
+
+-webkit-transition-timing-function: cubic-bezier(0.250, 0.460, 0.000, 0.925); 
+   -moz-transition-timing-function: cubic-bezier(0.250, 0.460, 0.000, 0.925); 
+     -o-transition-timing-function: cubic-bezier(0.250, 0.460, 0.000, 0.925); 
+        transition-timing-function: cubic-bezier(0.250, 0.460, 0.000, 0.925); /* custom */	
+}
+
+#up-top {
+	height: 150px;
+	//@include transition(all .6s ease-out);
+	overflow: visible;
+
+
+	@include sickTrans;
+
+	margin:0;
+	padding:0;
+	width:100%;
+	.logo{
+		position: absolute;
+		z-index: 1000;
+		width:100px;
+		height: 100px;
+		top:40px;
+		left:50%;
+		margin-top: 0;
+		margin-left:-50px;		
+		@include sickTrans;
+		svg {
+			height: 100%;
+			width:100%;
+			path {
+				stroke:$transgrey;
+				stroke-width:2;
+			}
+		}
+	}
+	&.intro-ani {
+		height: 100vh;
+		.logo{
+			top:50%;
+			left:50%;
+			margin-top: -200px;
+			margin-left: -200px;
+			width:400px;
+			height: 400px;
+			@include breakpoint(small) {
+				width:260px;
+				height: 260px;
+				margin-top: -130px;
+				margin-left: -130px;
+			}
+			@include transition(all,.2s);
+			svg {
+
+				path {
+					stroke-width:1;
+				}
+			}	
+		}
+	}
+}
+
+#zone-section {
+	text-align: center;
+	color:white;
+//	background: rgba(0,0,0,.8);
+	// margin: 2000px 0;
+	//height: 2000px;
+	margin-bottom: 50px;
+	overflow: hidden;
+	//@include fixchop;
+}
+
+.lablr {
+	text-align: right;
+	margin-bottom: 50px;
+	position: relative;
+	z-index: 300;
+	@include breakpoint(small) {
+		text-align: center;
+	}
+}
+
+h2 {
+	@include din;
+	font-weight: 300;
+	font-size: 23px;
+	display: inline-block;
+	color:$transgrey;
+	padding:10px 20px;
+	background: white;
+	@include breakpoint(small) {
+		display: block;
+		text-align: center;
+		font-size: 17px;
+	}
+}
+
+
+
+
+.menu {
+	z-index: 1000;
+	position: fixed;
+	top:53px;
+	left:0;
+	display: none;
+	padding-left: 150px;
+	li {
+		font-size: 22px;
+		display: inline-block;
+		margin: 0 16px;
+
+	}
+}
+
+
+
+.badge {
+	position: fixed;
+	display: block;
+	top:20px;
+	left:20px;
+	height: 120px;
+	width: 120px;
+	z-index: 1000;
+	@include breakpoint(small) {
+		position: absolute;
+		height:90px;
+		width:90px;
+		top:5px;
+		left:5px;
+		//right:5px;
+	}
+	.burst {
+		position: absolute;
+		top:0px;
+		left:0px;
+		width: 100%;
+		height: 100%;
+		svg {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	&.clean {
+		@include transition(all .3s ease-out);
+	}
+	&.clean:hover {
+		@include transform(scale(.9) rotate(3360deg));
+	}
+	.info {
+		position: absolute;
+		top:10px;
+		left:10px;
+		width: 100px;
+		height: 100px;
+		text-align:center;
+		color:white;
+		@include flexbox;
+		@include breakpoint(break) {
+			top:5px;
+			left:5px;
+			width: 80px;
+			height: 80px;
+		}
+		.deets {
+			text-align: center;
+			@include flex-item-align-self(center);
+			@include din;
+			font-weight: 500;
+			color:$transgrey;
+			line-height: 1;
+			width: 100%;
+			font-size: 12px;
+			letter-spacing: 0em;
+			@include breakpoint(small) {
+				font-size: 8px;
+			}
+			.label {
+				//font-weight: 800;
+				//text-transform: uppercase;
+				margin-bottom: 6px;
+				font-size: 15px;
+			}
+			.rsvp {
+				//margin-top: 10px;
+			}
+		}
+	}
+
+}
+
+@mixin big-text {
+	//display: inline;
+	//margin: 0;
+	//padding:0;
+	font-size: 60px;
+	line-height: 1.2em;
+	text-align: left;
+	font-weight: 400;
+	@include breakpoint(break) {
+		font-size: 40px;
+	}
+	@include breakpoint(small) {
+		font-size: 20px;
+	}
+
+}
+
+@mixin big-section {
+	width: 80%;
+	max-width: 1200px;
+	margin: 0 auto;
+	margin-top: 150px;
+	text-align: left;
+	@include box-sizing(border-box);
+	@include breakpoint(small) {
+		margin-top: 75px;
+		width: 90%;
+	}
+	p {
+		margin-bottom: 40px;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+
+	
+}
+
+.bigblock {
+	position: relative;
+	background: $transgrey;
+	background-size: cover;
+	background-position: center center;
+	padding:50px;	
+	color:white;
+	padding-bottom: 100px;
+	a {
+		color:white;
+	}
+	@include breakpoint(break) {
+			padding:25px;
+	}	
+}
+
+.big-content {
+	@include big-text; 
+	z-index: 300;
+	position: relative;
+}
+
+.intro {
+
+	@include big-section;
+	margin-top: 25px;
+	
+
+	h1 {
+		//@include din;
+		//font-weight: 300;
+		margin-right: .2em;
+	}	
+	a {
+		text-decoration: underline;
+	}
+	@include breakpoint(small) {
+		margin-top: 25px;
+	}
+}
+
+
+.clients-msg {
+	@include big-section;
+	
+
+}
+
+
+
+.logos {
+	text-align: center;
+	margin-top: 50px;
+	.client-logo {
+		display: inline-block;
+		vertical-align: middle;
+		margin:20px;
+		max-width: 200px;
+		height: auto;
+		svg {
+			width: 100%;
+			max-height: 100px;
+		}
+	}
+}
+
+
+.pop-up {
+	position: relative;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url(../img/events/a.jpg);
+	min-height: 50vw;
+	.innards {
+		position: relative;
+		z-index: 100;
+	}
+	@include big-section;
+	p {
+		font-size: 1.2em;
+		line-height: 1.3em;
+	}
+	.motto {
+		max-width: 390px;
+		margin: 0 auto;
+		@include breakpoint(break) {
+			max-width: 200px;
+		}
+		svg {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.form {
+		h3 {
+			margin: 20px 0 40px;
+			text-align: center;
+		}
+		max-width:500px;
+		margin: 0 auto;
+	}
+	#cd-form,
+	.wpcf7 {
+		margin-top: 40px;
+		text-align: center;
+	}
+}
+
+.contact {
+	@include big-section;
+	text-align: center;
+	font-size: 40px;
+	color:$transgrey;
+	//margin-bottom: 1500px;
+	a {
+		@include transition(all .3s);
+		color:$transgrey;
+		font-size: 32px;
+		@include breakpoint(break) {
+			font-size:16px;
+		}
+	}
+	@include breakpoint(break) {
+		font-size: 20px;
+	}
+	.socials {
+		li {
+			display: inline-block;
+			margin:14px;
+			height: 50px;
+			width:50px;
+			@include breakpoint(break) {
+				width: 30px;
+				height: 30px;
+			}
+			svg {
+				width: 100%;
+				height: 100%;
+				path {
+					@include transition(all .3s);
+					fill: $transgrey;
+				}
+			}
+		}
+	}
+}
+
+
+.darkbg-overlay {
+	position: absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	background: rgba(0,0,0,.83);
+	z-index: 0;
+}

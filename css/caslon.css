@@ -1,0 +1,41 @@
+
+/**
+ * @license
+ * MyFonts Webfont Build ID 3064501, 2015-07-25T13:32:09-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: NewCaslonBEFOP-Roman by Elsner+Flake
+ * URL: http://www.myfonts.com/fonts/ef/new-caslon-b/roman/
+ * 
+ * Webfont: NewCaslonBEFOP-Ita by Elsner+Flake
+ * URL: http://www.myfonts.com/fonts/ef/new-caslon-b/ita/
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=3064501
+ * Licensed pageviews: 10,000
+ * Webfonts copyright: Copyright (c) 2004 Veronika Elsner, Guenther Flake GbR; Hamburg. All Rights Reserved.
+ * 
+ * © 2015 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/2ec2b5");
+
+  
+@font-face {font-family: 'NewCaslon';src: url('../fonts/cas/2EC2B5_0_0.eot');src: url('../fonts/cas/2EC2B5_0_0.eot?#iefix') format('embedded-opentype'),url('../fonts/cas/2EC2B5_0_0.woff2') format('woff2'),url('../fonts/cas/2EC2B5_0_0.woff') format('woff'),url('../fonts/cas/2EC2B5_0_0.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+ 
+  
+@font-face {font-family: 'NewCaslon';src: url('../fonts/cas/2EC2B5_1_0.eot');src: url('../fonts/cas/2EC2B5_1_0.eot?#iefix') format('embedded-opentype'),url('../fonts/cas/2EC2B5_1_0.woff2') format('woff2'),url('../fonts/cas/2EC2B5_1_0.woff') format('woff'),url('../fonts/cas/2EC2B5_1_0.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+ 

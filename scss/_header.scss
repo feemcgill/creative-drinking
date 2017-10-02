@@ -1,0 +1,78 @@
+.site-header {
+
+	.site-branding {
+	
+		.site-title {
+
+			a, a:link, a:visited {
+
+			}
+
+		}
+		.site-description {
+
+		}			
+	}
+}
+
+
+
+#main-menu {
+	ul{
+	
+		li {
+	
+			a {
+
+			}
+		}
+	}
+}
+
+
+
+.close-menu {
+	position: absolute;
+	top:30px;
+	right:40px;
+	color:$red;
+	font-size: 21px;
+	background: url(../img/controls/close.png) no-repeat;
+	background-image: url(../img/controls/close.svg), none;
+	background-position: left center;
+	padding-left: 24px;
+	@include breakpoint(small) {
+		font-size:14px;
+		top:20px;
+		@include ir;
+		width:20px;
+		height:20px;
+		right:20px;
+	}
+}
+
+
+
+.show-menu:link,
+.show-menu:link:hover,
+.show-menu:visited,
+.show-menu {
+	top:50px;
+	right:30px;
+	.burger {
+		position: absolute;
+		top: 8px;
+		left: 7px;
+		width: 24px;
+		>div {
+			width: 100%;
+			height: 5px;
+			background:#666;
+			border-radius: 3px;
+			&.line2 {
+				margin: 2px 0;
+			}
+		}
+
+	}
+}

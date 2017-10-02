@@ -1,0 +1,63 @@
+
+
+CODE DUMP!
+
+
+
+
+#two {
+
+	//height: 300vh;
+	.bg {
+		height: 100vh;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right:0;
+
+		&.fixmyhead {
+			position: fixed;
+		}
+	}
+	.bgdiv {
+		width: 50%;
+		height:8.333333vh;
+		float: left;
+		position: relative;
+		&:nth-of-type(3n+1) {
+			background: yellow;
+		}
+		&:nth-of-type(3n+2) {
+			background: yellow;
+		}
+		&:nth-of-type(3n+3) {
+			background: yellow;
+		}
+
+
+	}
+}
+
+
+
+        /*
+        scrawlEven.css({
+            //fill : 'hsla(' + hsla + ', 85%, 75%, 1)'
+                  fill: 'white'
+        });
+
+        scrawlOdd.css({
+            //fill : 'hsla(' + hsla2 + ', 85%, 75%, 1)'
+                  fill: 'white'
+        });
+   
+        scrawlBg.css({
+            //fill : 'hsla(' + hsla3 + ', 85%, 75%, 1)'
+            fill: 'white'
+        });
+
+        logoPath.css({
+            stroke : 'hsla(' + hsla4 + ', 85%, 75%, 1)'
+        });
+
+      */
