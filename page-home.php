@@ -120,9 +120,11 @@ $imgUrl_events = $attachment_id_events['sizes']['large'];
 			<div class="darkbg-overlay"></div>
 			<div class="innards">
 				<div class="lablr"><h2><?php the_field('events_label'); ?></h2></div>
+				<?php /*
 				<div   class="motto inSvg">
 					<?php  get_template_part('inc/svg','motto'); ?>
 				</div>
+				*/ ?>
 				<div class="form">
 					<div class="events-content">
 						<?php the_field('events_content'); ?>
